@@ -27,15 +27,15 @@
     <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
     <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
     <br><br>
-    <form action="mathe_overview.php" method="get">
+    <form action="mathe_overview.php" method="post">
         <button type="submit">Mathematik</button>
     </form>
     <br>
-    <form action="elektrotechnik_overview.php" method="get">
+    <form action="elektrotechnik_overview.php" method="post">
         <button type="submit">Elektrotechnik</button>
     </form>
     <br>
-    <form action="betp_overview.php" method="get">
+    <form action="betp_overview.php" method="post">
         <button type="submit">Betriebstechnik</button>
     </form>
 </body>
