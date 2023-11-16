@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skalarprodukt</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<h1>Vektorprodukt</h1><br>
-    <form action="vektorprodukt.php" method="post">
+<h1>Skalarprodukt</h1><br>
+    <form action="skalarprodukt.php" method="post">
         <h2>A</h2>
         <label for="ax">ax</label>
         <input type="text" name="ax" id="ax">
