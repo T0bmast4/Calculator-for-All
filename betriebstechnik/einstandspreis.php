@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Einstandspreis berechnen</title>
+    <title>Einstandspreis</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h1>Einstandspreis berechnen</h1>
@@ -17,6 +18,8 @@
         <input type="text" name="rabatt" id="rabatt"><br>
         <label for="skonto">Skonto</label>
         <input type="text" name="skonto" id="skonto"><br>
+        <label for="trabatt">Treuerabatt</label>
+        <input type="text" name="trabatt" id="trabatt"><br>
         <label for="fracht">Fracht (Brutto)</label>
         <input type="text" name="fracht" id="fracht"><br>
         <label for="verpackung">Verpackung (Brutto)</label>
@@ -28,12 +31,13 @@
         <input type="submit" value="Berechnen"><br><br>
     </form>
     <?php
-    if(isset($_POST["brutto"]) && isset($_POST["ust"]) && isset($_POST["rabatt"]) && isset($_POST["skonto"]) && isset($_POST["fracht"]) && isset($_POST["verpackung"]) && isset($_POST["versicherung"]) && isset($_POST["stueck"])){
+    if(isset($_POST["brutto"]) && isset($_POST["ust"]) && isset($_POST["rabatt"]) && isset($_POST["skonto"]) && isset($_POST["fracht"]) && isset($_POST["verpackung"]) && isset($_POST["versicherung"]) && isset($_POST["stueck"]) && isset($_POST["trabatt"])){
 
         $brutto = $_POST["brutto"];
         $ust = $_POST["ust"];
         $rabatt = $_POST["rabatt"];
         $skonto = $_POST["skonto"];
+        $trabatt = $_POST["trabatt"];
         $fracht = $_POST["fracht"];
         $verpackung = $_POST["verpackung"];
         $versicherung = $_POST["versicherung"];
@@ -45,8 +49,11 @@
         $zekpminus = $netto / 100 * $rabatt;
         $zekp = $netto - $zekpminus;
 
-        $bekpminus = $zekp / 100 * $skonto;
-        $bekp = round($zekp - $bekpminus, 2);
+        $trabattminus = $zekp / 100 * $trabatt;
+        $zekp1 = $zekp - $trabattminus;
+
+        $bekpminus = $zekp1 / 100 * $skonto;
+        $bekp = round($zekp1 - $bekpminus, 2);
 
         $frachtpreis = round($fracht / (100 + $ust) * 100, 2);
         $verpackungspreis = round($verpackung / (100 + $ust) * 100, 2);
