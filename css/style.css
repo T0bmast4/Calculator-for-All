@@ -9,4 +9,10 @@
 table{
     border-collapse: collapse;
     width: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+table td {
+    text-align: center;
 }
