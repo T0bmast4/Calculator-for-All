@@ -10,6 +10,7 @@
     <h1>Mathematik-Übersicht</h1>
     <ul>
         <li><a href="mathematik/vektorprodukt.php">Vektorprodukt</a></li>
+        <li><a href="mathematik/skalarprodukt.php">Skalarprodukt</a></li>
     </ul>
 </body>
 </html>
