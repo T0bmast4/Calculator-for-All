@@ -14,6 +14,11 @@
             cursor: pointer;
             margin-bottom: 10px; 
             width: 150px; 
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
         }
 
         button:hover {
@@ -43,5 +48,8 @@
         <button type="submit">Betriebstechnik</button>
     </form>
     <br>
+    <form action="medt_overview.php" method="post">
+        <button type="submit">Medientechnik</button>
+    </form>
 </body>
 </html>
