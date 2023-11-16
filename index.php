@@ -19,18 +19,29 @@
         button:hover {
             background-color: #0056b3; 
         }
+        
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
     <title>Calculator for All</title>
 </head>
 <body>
     <h1>Willkommen bei Calculator for All</h1>
     <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
-    <p>Im laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
+    <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
+    <br><br>
+    <form action="mathe_overview.php" method="post">
+        <button type="submit">Mathematik</button>
+    </form>
     <br>
-    <ul>
-        <li><a href="mathe_overview.php">Mathematik</a></li>
-        <li><a href="elektrotechnik_overview.php">Elektrotechnik</a></li>
-        <li><a href="betp_overview.php">Betriebstechnik</a></li>
-    </ul>
+    <form action="elektrotechnik_overview.php" method="post">
+        <button type="submit">Elektrotechnik</button>
+    </form>
+    <br>
+    <form action="betp_overview.php" method="post">
+        <button type="submit">Betriebstechnik</button>
+    </form>
+    <br>
 </body>
 </html>
