@@ -102,9 +102,9 @@
         } else {
             if ($einheit === "nF") {
                 $C = $c * pow(10, -9);
-            } elseif ($einheit === "uF") {
+            } else if ($einheit === "uF") {
                 $C = $c * pow(10, -6);
-            } elseif ($einheit === "pF") {
+            } else if ($einheit === "pF") {
                 $C = $c * pow(10, -12);
             }  else {
                 $C = $c;
