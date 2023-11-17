@@ -10,16 +10,18 @@
 <form action="datenbank.php" method="post">
     <select name="select" id="select">
         <option value="select">Select</option>
-        <option value="select">Insert</option>
-        <option value="select">Update</option>
-        <option value="select">Delete</option>
+        <option value="insert">Insert</option>
+        <option value="update">Update</option>
+        <option value="delete">Delete</option>
 </form>
 
 
 <?php
+if isset($_POST["select"]) && isset($_POST["insert"]) && isset($_POST["update"]) && isset($_POST["delete"])
 
+$pdo = new PDO ("mysql:host=$servername;dbname=htl_rennweg"; )
 
-
+$pdo = $statement ()
 
 
 
