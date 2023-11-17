@@ -32,6 +32,7 @@
     <title>Calculator for All</title>
 </head>
 <body>
+    <!-- HALLO NOAH -->
     <h1>Willkommen bei Calculator for All</h1>
     <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
     <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
