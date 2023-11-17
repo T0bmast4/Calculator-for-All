@@ -34,8 +34,10 @@
             </thead>
             <tbody>
                 <?php
-                if (isset($_POST["inputCount"])) {
+                if (isset($_POST["inputCount"]) && $_POST["inputCount"] != null) {
                     $inputCount = $_POST["inputCount"];
+                }else{
+                    $inputCount = 3;
                 }
                 ?>
 
@@ -54,12 +56,14 @@
         <input type="submit" value="Erstellen">
     </form>
     <?php
-    if ($_POST["method"] == "POST") {
-        echo "<form action='" . $_POST["action"] . "' method='post'>";
-    } else if ($_POST["method"] == "GET") {
-        echo "<form action='" . $_POST["action"] . "' method='get'>";
-    } else {
-        echo "<p class='error'>Formular konnte nicht erstellt werden.</p>";
+    if(isset($_POST["method"])) {
+        if ($_POST["method"] == "POST") {
+            echo "<form action='" . $_POST["action"] . "' method='post'>";
+        } else if ($_POST["method"] == "GET") {
+            echo "<form action='" . $_POST["action"] . "' method='get'>";
+        } else {
+            echo "<p class='error'>Formular konnte nicht erstellt werden.</p>";
+        }
     }
     ?>
 
