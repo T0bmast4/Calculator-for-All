@@ -17,15 +17,9 @@
 
 
 <?php
-if isset($_POST["select"]) && isset($_POST["insert"]) && isset($_POST["update"]) && isset($_POST["delete"])
-
-$pdo = new PDO ("mysql:host=$servername;dbname=htl_rennweg"; )
-
-$pdo = $statement ()
-
-
-
-
+if (isset($_POST["select"]) && isset($_POST["insert"]) && isset($_POST["update"]) && isset($_POST["delete"])) {
+    
+}
 ?>
 
 </body>
