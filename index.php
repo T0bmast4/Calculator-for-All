@@ -51,5 +51,9 @@
     <form action="medt_overview.php" method="post">
         <button type="submit">Medientechnik</button>
     </form>
+    <br>
+    <form action="db_overview.php" method="post">
+        <button type="submit">Datenbanken</button>
+    </form>
 </body>
 </html>
