@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
     <form action="ipaddr.php" method="post">
         <label for="ip">Netz ID</label><br>
         <input type="text" name="ip" id="ip"><br><br>
-        <label for="subnetMask">Netz ID</label><br>
+        <label for="subnetMask">Subnet Mask</label><br>
         <input type="text" name="subnetMask" id="subnetMask"><br><br>
-        <input type="submit" value="Berechnen">
+        <input type="submit" value="Berechnen"><br><br> 
     </form>
     <?php
+    if(isset($_POST["ip"]) && isset($_POST["subnetMask"])){
     function calculateIPRange($ip, $subnetMask) {
         // Convert IP and subnet mask to binary
         $ipBinary = ip2long($ip);
@@ -45,12 +47,13 @@
     
     $result = calculateIPRange($ip, $subnetMask);
     
-    echo "IP Address: $ip\n";
-    echo "Subnet Mask: $subnetMask\n\n";
+    echo "IP Address:". $ip ."<br>";
+    echo "Subnet Mask:". $subnetMask ."<br>";
     
-    echo "Network Address: " . $result['Network Address'] . "\n";
-    echo "Broadcast Address: " . $result['Broadcast Address'] . "\n";
-    echo "Usable IP Range: " . $result['Usable IP Range']['Start'] . " - " . $result['Usable IP Range']['End'] . "\n";
+    echo "Network Address: " . $result['Network Address'] . "<br>";
+    echo "Broadcast Address: " . $result['Broadcast Address'] . "<br>";
+    echo "Usable IP Range: " . $result['Usable IP Range']['Start'] . " - " . $result['Usable IP Range']['End'] . "<br>";
+    }
     ?>
     
 </body>
