@@ -11,7 +11,7 @@
 <body>
     <h1>Datenbanken-Übersicht</h1>
     <ul>
-        <li><a href="datenbanken/datenbankSelect.php">SQL-Select></a></li>
+        <li><a href="datenbanken/datenbankSelect.php">SQL-Select</a></li>
     </ul>
 
 </body>
