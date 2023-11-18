@@ -18,6 +18,25 @@
 
 <?php
 if (isset($_POST["select"]) && isset($_POST["insert"]) && isset($_POST["update"]) && isset($_POST["delete"])) {
+
+$pdo = new PDO("mysql:host=localhost;dbname=fitnessclub", "root", "");
+
+$statement = $pdo->prepare("SELECT MG_NR, Name, Stunden, Kosten FROM reservierung");
+
+
+if ($statement->execute()) {
+
+    foreach ($statement as $record) {
+
+    echo $record["MG_Nr"] . "" . $record ["Name"] . "" . $record["Stunden"] . "" . $record["Kosten"]. "" .  "<br>";
+
+
+    }
+
+
+}
+
+
     
 }
 ?>
