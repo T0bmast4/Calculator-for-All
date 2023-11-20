@@ -83,12 +83,21 @@
         <br>
         <input type="submit" value="Erstellen">
     </form>
-<<<<<<< HEAD
         <br>
         <textarea name="TEST" id="TEST" cols="100" rows="20">
-        
-    
         <?php
+        if(isset($_POST["method"])) {
+            if ($_POST["method"] == "POST") {
+                echo "<form action='" . $_POST["action"] . "' method='post'>\n";
+            } else if ($_POST["method"] == "GET") {
+                echo "<form action='" . $_POST["action"] . "' method='get'>\n";
+            } else {
+                echo "Formular konnte nicht erstellt werden.";
+                return;
+            }
+        }
+
+        ?><?php
         for ($i = 0; $i < $inputCount; $i++) {
             if (isset($_POST["type" . $i]) && isset($_POST["name" . $i]) && isset($_POST["id" . $i])) {
                 $type = $_POST["type" . $i];
