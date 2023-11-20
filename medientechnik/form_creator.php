@@ -83,22 +83,17 @@
         <br>
         <input type="submit" value="Erstellen">
     </form>
-    <?php
-    if ($_POST["method"] == "POST") {
-        echo "<form action='" . $_POST["action"] . "' method='post'>";
-    } else if ($_POST["method"] == "GET") {
-        echo "<form action='" . $_POST["action"] . "' method='get'>";
-    } else {
-        echo "<p class='error'>Formular konnte nicht erstellt werden.</p>";
-    }
-    ?>
-
-    <?php
-    for ($i = 0; $i < $inputCount; $i++) {
-        if (isset($_POST["type" . $i]) && isset($_POST["name" . $i]) && isset($_POST["id" . $i])) {
-            $type = $_POST["type" . $i];
-            $name = $_POST["name" . $i];
-            $id = $_POST["id" . $i];
+<<<<<<< HEAD
+        <br>
+        <textarea name="TEST" id="TEST" cols="100" rows="20">
+        
+    
+        <?php
+        for ($i = 0; $i < $inputCount; $i++) {
+            if (isset($_POST["type" . $i]) && isset($_POST["name" . $i]) && isset($_POST["id" . $i])) {
+                $type = $_POST["type" . $i];
+                $name = $_POST["name" . $i];
+                $id = $_POST["id" . $i];
 
                 if(isset($_POST["label" . $i])) {
                     echo "<label for='" . $id . "'>" . $_POST["label" . $i] . "</label>\n";
