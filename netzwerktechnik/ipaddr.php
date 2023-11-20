@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>IP Adressen</title>
 </head>
 <body>
     <form action="ipaddr.php" method="post">
         <label for="ip">Netz ID</label><br>
-        <input type="text" name="ip" id="ip"><br><br>
+        <input type="text" name="ip" id="ip" required class="text" placeholder="192.168.0.0"><br><br>
         <label for="subnetMask">Subnet Mask</label><br>
-        <input type="text" name="subnetMask" id="subnetMask"><br><br>
-        <input type="submit" value="Berechnen"><br><br> 
-    </form>
+        <input type="text" name="subnetMask" id="subnetMask" required class="text" placeholder="255.255.255.0"><br><br>
+        <input type="submit" value="Berechnen"><br><br>
     <?php
     if(isset($_POST["ip"]) && isset($_POST["subnetMask"])){
     function calculateIPRange($ip, $subnetMask) {
-        // Convert IP and subnet mask to binary
         $ipBinary = ip2long($ip);
         $subnetMaskBinary = ip2long($subnetMask);
     
-        // Calculate network address
         $networkAddress = $ipBinary & $subnetMaskBinary;
     
-        // Calculate broadcast address
         $broadcastAddress = $networkAddress | (~$subnetMaskBinary);
     
-        // Calculate usable IP range
         $usableIPRangeStart = $networkAddress + 1;
         $usableIPRangeEnd = $broadcastAddress - 1;
     
@@ -41,20 +36,19 @@
         ];
     }
     
-    // Example usage
     $ip = $_POST["ip"];
     $subnetMask = $_POST["subnetMask"];
     
     $result = calculateIPRange($ip, $subnetMask);
     
-    echo "IP Address:". $ip ."<br>";
-    echo "Subnet Mask:". $subnetMask ."<br>";
+    echo "<p>IP Address:</p>". $ip ."<br>";
+    echo "<p>Subnet Mask:</p>". $subnetMask ."<br>";
     
-    echo "Network Address: " . $result['Network Address'] . "<br>";
-    echo "Broadcast Address: " . $result['Broadcast Address'] . "<br>";
-    echo "Usable IP Range: " . $result['Usable IP Range']['Start'] . " - " . $result['Usable IP Range']['End'] . "<br>";
+    echo "<p>Network Address:</p> " . $result['Network Address'] . "<br>";
+    echo "<p>Broadcast Address:</p> " . $result['Broadcast Address'] . "<br>";
+    echo "<p>Usable IP Range:</p> " . $result['Usable IP Range']['Start'] . " - " . $result['Usable IP Range']['End'] . "<br>";
     }
     ?>
-    
+    </form>
 </body>
 </html>
