@@ -84,8 +84,7 @@
         <input type="submit" value="Erstellen">
     </form>
         <br>
-        <textarea name="TEST" id="TEST" cols="100" rows="20">
-        <?php
+        <textarea name="TEST" id="TEST" cols="100" rows="20"><?php
         if(isset($_POST["method"])) {
             if ($_POST["method"] == "POST") {
                 echo "<form action='" . $_POST["action"] . "' method='post'>\n";
@@ -96,7 +95,6 @@
                 return;
             }
         }
-
         ?><?php
         for ($i = 0; $i < $inputCount; $i++) {
             if (isset($_POST["type" . $i]) && isset($_POST["name" . $i]) && isset($_POST["id" . $i])) {
@@ -105,10 +103,10 @@
                 $id = $_POST["id" . $i];
 
                 if(isset($_POST["label" . $i])) {
-                    echo "<label for='" . $id . "'>" . $_POST["label" . $i] . "</label>\n";
+                    echo "    <label for='" . $id . "'>" . $_POST["label" . $i] . "</label>\n";
                 }
 
-                echo "<input type='" . $type . "' name='" . $name . "' id='" . $id . "'";
+                echo "    <input type='" . $type . "' name='" . $name . "' id='" . $id . "'";
 
                 if (isset($_POST["placeholder" . $i])) {
                     echo " placeholder='" . $_POST["placeholder" . $i] . "'";
@@ -122,9 +120,7 @@
             }
         }
         echo "</form>";
-        ?>
-        <br>
-    </textarea>
+        ?></textarea>
 </body>
 
 </html>
