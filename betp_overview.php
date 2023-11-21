@@ -29,6 +29,7 @@ button:hover {
     <ul>
         <li><a href="betriebstechnik/abc_analyse.php">ABC-Analyse</a></li>
         <li><a href="betriebstechnik/einstandspreis.php">Einstandspreis</a></li>
+        <li><a href="betriebstechnik/lagerkennzahlen.php">Lagerkennzahlen</a></li>
     </ul>
     <br><br>
     <form action="index.php" method="get">
