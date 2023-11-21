@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator for All</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            margin-top: -1.32%;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,8 +19,17 @@
         <nav>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Test2</a></li>
-                <div class="login-button-div"><a href="" class="login-button">Login</a></div>
+                <div class="dropdown">
+                    <li><a href="">Calculator</a></li>
+                    <div class="dropdown-content">
+                        <a href="mathe_overview.php">Mathematik</a>
+                        <a href="betp_overview.php">Betriebstechnik</a>
+                        <a href="elektortechnik_overview.php">Elektrotechnik</a>
+                        <a href="medt_overview.php">Medientechnik</a>
+                        <a href="nwtk_overview.php">Netzwerktechnik</a>
+                    </div>
+                </div>
+                <a href="" class="login-button">Login</a>
             </ul>
         </nav>
     </div>
