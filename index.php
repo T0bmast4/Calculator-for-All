@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        button {
-            background-color: #007BFF; 
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 10px; 
-            width: 150px; 
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            text-decoration: none;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3; 
-        }
-        
-        * {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
     <title>Calculator for All</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Willkommen bei Calculator for All</h1>
-    <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
-    <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
-    <br><br>
-    <form action="mathe_overview.php" method="post">
-        <button type="submit">Mathematik</button>
-    </form>
-    <br>
-    <form action="elektrotechnik_overview.php" method="post">
-        <button type="submit">Elektrotechnik</button>
-    </form>
-    <br>
-    <form action="betp_overview.php" method="post">
-        <button type="submit">Betriebstechnik</button>
-    </form>
-    <br>
-    <form action="medt_overview.php" method="post">
-        <button type="submit">Medientechnik</button>
-    </form>
-    <br>
-    <form action="db_overview.php" method="post">
-        <button type="submit">Datenbanken</button>
-    </form>
-    <br>
-    <form action="nwtk_overvierw.php" method="post">
-        <button type="submit">Netzwerktechnik</button>
-    </form>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Test2</a></li>
+                <div class="login-button-div"><a href="" class="login-button">Login</a></div>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <h1>Willkommen bei Calculator for All</h1>
+        <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
+        <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
+        <br><br>
+    </div>
 </body>
+
 </html>

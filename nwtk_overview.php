@@ -9,7 +9,7 @@
 <body>
     <h1>Mathematik-Übersicht</h1>
     <ul>
-        <li><a href="netzwertechnik/ipaddr.php">IP-Adressen</a></li>
+        <li><a href="netzwerktechnik/ipaddr.php">IP-Adressen</a></li>
     </ul>
 </body>
 </html>

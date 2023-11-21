@@ -83,6 +83,7 @@
         <br>
         <input type="submit" value="Erstellen">
     </form>
+    <p style="color: red;">Submit wird automatisch erstellt!</p>
         <br>
         <textarea name="TEST" id="TEST" cols="100" rows="20"><?php
         if(isset($_POST["method"])) {
@@ -117,6 +118,7 @@
                 }
 
                 echo ">\n";
+                echo "    <input type='submit' value='Senden'>\n";
             }
         }
         echo "</form>";
