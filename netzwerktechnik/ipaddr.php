@@ -4,67 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>IP Adressen</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            background-color: #f1f1f1;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        p {
-            font-weight: bolder;
+            margin: 0;
         }
     </style>
 </head>
 
 <body>
-    <form action="ipaddr.php" method="post">
-        <label for="ip">Netz ID</label><br>
-        <input type="text" name="ip" id="ip" required class="text" placeholder="192.168.0.0"><br><br>
-        <label for="subnetMask">Subnet Mask</label><br>
-        <input type="text" name="subnetMask" id="subnetMask" required class="text" placeholder="255.255.255.0"><br><br>
-        <input type="submit" value="Berechnen"><br><br>
+    <form class="main-form" action="ipaddr.php" method="post">
+        <label class="main-label" for="ip">Netz ID</label><br>
+        <input class="main-input" type="text" name="ip" id="ip" required class="text" placeholder="192.168.0.0"><br><br>
+        <label class="main-label" for="subnetMask">Subnet Mask</label><br>
+        <input class="main-input" type="text" name="subnetMask" id="subnetMask" required class="text" placeholder="255.255.255.0"><br><br>
+        <input class="main-button" type="submit" value="Berechnen"><br><br>
         <?php
         if (isset($_POST["ip"]) && isset($_POST["subnetMask"])) {
             function calculateIPRange($ip, $subnetMask)

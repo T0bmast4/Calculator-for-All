@@ -23,7 +23,10 @@
         <label for="action">Action</label>
         <input type="text" name="action" id="action" placeholder="index.php" required>
         <label for="method">Method</label>
-        <input type="text" name="method" id="method" placeholder="POST" required>
+        <select name="method" id="method">
+            <option value="get">GET</option>
+            <option value="post" selected>POST</option>
+        </select>
         <br>
         <br>
         <table border="1">
@@ -87,9 +90,9 @@
         <br>
         <textarea name="TEST" id="TEST" cols="100" rows="20"><?php
         if(isset($_POST["method"])) {
-            if ($_POST["method"] == "POST") {
+            if ($_POST["method"] == "post") {
                 echo "<form action='" . $_POST["action"] . "' method='post'>\n";
-            } else if ($_POST["method"] == "GET") {
+            } else if ($_POST["method"] == "get") {
                 echo "<form action='" . $_POST["action"] . "' method='get'>\n";
             } else {
                 echo "Formular konnte nicht erstellt werden.";

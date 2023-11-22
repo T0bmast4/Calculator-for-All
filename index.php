@@ -24,7 +24,7 @@
                     <div class="dropdown-content">
                         <a href="mathe_overview.php">Mathematik</a>
                         <a href="betp_overview.php">Betriebstechnik</a>
-                        <a href="elektortechnik_overview.php">Elektrotechnik</a>
+                        <a href="elektrotechnik_overview.php">Elektrotechnik</a>
                         <a href="medt_overview.php">Medientechnik</a>
                         <a href="nwtk_overview.php">Netzwerktechnik</a>
                     </div>
