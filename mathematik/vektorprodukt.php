@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <h1>Vektorprodukt</h1>
     <form class="main-form" action="vektorprodukt.php" method="post">
         <h2>A</h2>
         <label class="main-label" for="ax">ax</label>

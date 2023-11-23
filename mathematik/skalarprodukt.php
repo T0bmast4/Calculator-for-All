@@ -12,12 +12,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
         }
     </style>
 </head>
 <body>
+    <h1>Skalarprodukt</h1>
     <form class="main-form" action="skalarprodukt.php" method="post">
         <h2>A</h2>
         <label class="main-label" for="ax">ax</label>

@@ -35,29 +35,13 @@ table td {
     border-radius: 10px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    border: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main-button:hover {
     background-color: #03696d;
-}
-
-.login-button {
-    position: absolute;
-    bottom: 2.3%;
-    left: 5.7%;
-    width: 85%;
-    padding: 12px 5px;
-    text-align: center;
-    background-color: #04a5aa;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-.login-button:hover {
-    background-color: #03696d;
+    cursor: pointer;
 }
 
 .main-form {
@@ -90,10 +74,11 @@ nav ul {
     padding: 0;
     width: 20%;
     background-color: #f1f1f1;
-    height: 100%;
+    height: 101%;
     position: fixed;
     overflow: auto;
     text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
 nav li a {
@@ -109,6 +94,7 @@ nav li a {
     border-radius: 10px;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
+    font-size: 18px;
 }
 
 nav li a:hover {
@@ -122,7 +108,6 @@ nav .active:hover {
 
 nav .active {
     background-color: #04a5aa;
-    ;
     color: white;
 }
 
@@ -139,10 +124,31 @@ nav .login-button {
     border-radius: 10px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
 nav .login-button:hover {
     background-color: #03696d;
+}
+
+nav .logout-button {
+    position: absolute;
+    bottom: 2.3%;
+    left: 5.7%;
+    width: 85%;
+    padding: 12px 5px;
+    text-align: center;
+    background-color: #e94848;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+nav .logout-button:hover {
+    background-color: #b44545;
 }
 
 nav .dropdown-content {
@@ -153,6 +159,7 @@ nav .dropdown-content {
     left: 4.7%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    font-size: 18px;
 }
 
 nav .dropdown-content a {

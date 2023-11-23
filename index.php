@@ -18,6 +18,7 @@
     <div>
         <nav>
             <ul>
+                <br>
                 <li><a href="#" class="active">Home</a></li>
                 <div class="dropdown">
                     <li><a href="">Calculator</a></li>
@@ -29,7 +30,14 @@
                         <a href="nwtk_overview.php">Netzwerktechnik</a>
                     </div>
                 </div>
-                <a href="" class="login-button">Login</a>
+                <?php
+                session_start();
+                if(isset($_SESSION["logged_in_user"])) {
+                ?>
+                <a href="" class="logout-button">Logout</a>
+                <?php }else {?>
+                <a href="login/login.php" class="login-button">Login</a>
+                <?php } ?>
             </ul>
         </nav>
     </div>
