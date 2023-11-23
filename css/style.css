@@ -100,6 +100,7 @@ nav li a {
 nav li a:hover {
     background-color: #8f8f8f;
     color: white;
+    cursor: pointer;
 }
 
 nav .active:hover {
@@ -125,6 +126,8 @@ nav .login-button {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav .login-button:hover {
@@ -134,7 +137,6 @@ nav .login-button:hover {
 nav .logout-button {
     position: absolute;
     bottom: 2.3%;
-    left: 5.7%;
     width: 85%;
     padding: 12px 5px;
     text-align: center;
@@ -179,7 +181,11 @@ nav .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-content-page {
+nav .dropdown .clicked .dropdown-content {
+    display: block;
+}
+
+nav .dropdown-content-page {
     display: block;
     position: absolute;
     background-color: #f1f1f1;
@@ -187,9 +193,10 @@ nav .dropdown:hover .dropdown-content {
     left: 4.7%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    font-size: 18px;
 }
 
-.dropdown-content-page a {
+nav .dropdown-content-page a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -198,12 +205,75 @@ nav .dropdown:hover .dropdown-content {
     transition-duration: 0.3s;
 }
 
-.dropdown-content-page a:hover {
+nav .dropdown-content-page a:hover {
     background-color: #ddd;
 }
 
-.dropdown-content-page .activeCalc {
+nav .dropdown-content-page .activeCalc {
     background-color: #b8b8b8;
     font-weight: bold;
     text-decoration: underline;
+    font-size: 18px;
+}
+
+.body {
+    margin: 0;
+    margin-top: -1.32%;
+}
+
+@media (width <= 1200px) {
+    .body, body {
+        margin: 0;
+        margin-top: -3.2%;
+    }
+
+    nav ul {
+        width: 35%;
+        height: 101%;
+    }
+
+    .main-content {
+        margin-left: 36%;
+    }
+
+    nav .login-button {
+        bottom: 2.3%;
+    }
+
+}
+
+@media (width <= 650px) {
+    .body, body {
+        margin: 0;
+        margin-top: -4.8%;
+    }
+
+    nav ul {
+        width: 35%;
+        height: 101%;
+    }
+
+    .main-content {
+        margin-left: 36%;
+    }
+
+    nav .login-button {
+        bottom: 3.2%;
+        left: 3.6%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    nav li a {
+        width: 77%;
+        font-size: 16px;
+    }
+
+    nav .dropdown-content {
+        font-size: 16px;
+    }
+
+    nav .dropdown-content-page, nav .dropdown-content-page .activeCalc {
+        font-size: 16px;
+    }
 }
