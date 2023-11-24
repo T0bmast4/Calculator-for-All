@@ -29,7 +29,7 @@
                             var calcDropdown = document.getElementById("calcDropdown");
                             var calcDropdown_content = document.getElementById("drop-content");
 
-                            calcDropdown.addEventListener("click", function () {
+                            calcDropdown.addEventListener("click", function() {
                                 caldDrop.classList.add("dropdown-page");
                                 calcDropdown_content.classList.add("dropdown-content-page");
                             });
@@ -41,16 +41,36 @@
                 <?php
                 session_start();
                 if (isset($_SESSION["logged_in_user"])) {
-                    ?>
-                    <a href="" class="logout-button">Logout</a>
+                ?>
+                    <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
                 <?php } else { ?>
                     <a href="login/login.php" class="login-button">Login</a>
                 <?php } ?>
+
+                <?php
+                if (isset($_GET["user"])) {
+                    $username = $_GET["user"];
+                    session_start();
+                    session_destroy();
+
+                    $pdo = new PDO("mysql:host=localhost;dbname=calculatorWebsite", "root", "");
+
+                    $stmt = $pdo->prepare("UPDATE users SET isLoggedIn = :isLoggedIn, currentDeviceID = :currentDeviceID WHERE username = :username");
+
+                    $stmt->bindValue(":isLoggedIn", "false");
+                    $stmt->bindValue(":currentDeviceID", "null");
+                    $stmt->bindValue(":username", $username);
+
+                    if ($stmt->execute()) {
+                        header("Location: index.php");
+                    }
+                }
+                ?>
             </ul>
         </nav>
     </div>
     <div class="main-content">
-        <h1>Willkommen bei Calculator for All</h1>
+        <h1>Herzlich Willkommen <a style="text-decoration: underline;"><?php if(isset($_SESSION["logged_in_name"])) {echo $_SESSION["logged_in_name"];}?></a> bei Calculator for All</h1>
         <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
         <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
         <br><br>
