@@ -10,22 +10,31 @@
 
 <body class="body">
     <?php
+    $isAdmin = false;
+    session_start();
+    require_once("includes/config.php");
+    $pdo = "";
     if (isset($_SESSION["logged_in_user"])) {
         $user = $_SESSION["logged_in_user"];
+        if ($user == "admin") {
+            $isAdmin = true;
+        }
+
+        /*$pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $stmt = $pdo->prepare("UPDATE users SET lastLogin = :lastLogin WHERE username = :username");
 
         $timestamp = time();
         $lastLogin = date("d.m.Y - H:i", $timestamp);
+        $lastLogin = "TEST";
         $stmt->bindValue(":lastLogin", $lastLogin);
-        $stmt->execute();
+        $stmt->execute();*/
     }
+    
+
     if (isset($_GET["user"])) {
         $username = $_GET["user"];
         session_start();
         session_destroy();
-        require_once("includes/config.php");
-
-        $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 
         $stmt = $pdo->prepare("UPDATE users SET isLoggedIn = :isLoggedIn WHERE username = :username");
 
@@ -36,7 +45,6 @@
         }
     }
     ?>
-    <div>
         <nav>
             <ul>
                 <br>
@@ -51,23 +59,19 @@
                         <a href="nwtk_overview.php">Netzwerktechnik</a>
                     </div>
                 </div>
+
+                <?php 
+                if($isAdmin) {
+                    ?>
+                    <div id="admin-drop" class="dropdown">
+                    <li><a id="adminDropdown">Admin-Tools</a></li>
+                    <div id="admin-drop-content" class="dropdown-content">
+                        <a href="admin-tools/password-generator.php">Passwort-Generator</a>
+                    </div>
+                </div>
                 <?php
-                if (isset($_SESSION["logged_in_user"])) {
-                    $user = $_SESSION["logged_in_user"];
-                    if ($user == "admin") {
-                        ?>
-                        <div id="admin-drop" class="dropdown">
-                            <li><a id="adminDropdown">Admin-Tools</a></li>
-                            <div id="admin-drop-content" class="dropdown-content">
-                                <a href="admin-tools/password-generator.php">Passwort-Generator</a>
-                            </div>
-                        </div>
-                        <?php
-                    }
                 }
                 ?>
-
-
                 <script>
                     if (window.innerWidth <= 650) {
                         var calcDrop = document.getElementById("drop");
@@ -93,7 +97,6 @@
 
 
                 <?php
-                session_start();
                 if (isset($_SESSION["logged_in_user"])) {
                     ?>
                     <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
@@ -104,11 +107,9 @@
         </nav>
     </div>
     <div class="main-content">
-        <h1>Herzlich Willkommen <a style="text-decoration: underline;">
-                <?php if (isset($_SESSION["logged_in_name"])) {
+        <h1>Herzlich Willkommen <a style="text-decoration: underline;"><?php if (isset($_SESSION["logged_in_name"])) {
                     echo $_SESSION["logged_in_name"];
-                } ?>
-            </a> bei Calculator for All</h1>
+                } ?></a> bei Calculator for All</h1>
         <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
         <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
         <br><br>
