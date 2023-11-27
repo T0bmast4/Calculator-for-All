@@ -10,7 +10,7 @@
 
 <body class="body">
     <?php
-    if(isset($_SESSION["logged_in_user"])) {
+    if (isset($_SESSION["logged_in_user"])) {
         $user = $_SESSION["logged_in_user"];
         $stmt = $pdo->prepare("UPDATE users SET lastLogin = :lastLogin WHERE username = :username");
 
@@ -51,34 +51,44 @@
                         <a href="nwtk_overview.php">Netzwerktechnik</a>
                     </div>
                 </div>
-                <div id="admin-drop" class="dropdown">
-                    <li><a id="adminDropdown">Admin-Tools</a></li>
-                    <div id="admin-drop-content" class="dropdown-content">
-                        <a href="admin-tools/password-generator.php">Passwort-Generator</a>
-                    </div>
-                </div>
+                <?php
+                if (isset($_SESSION["logged_in_user"])) {
+                    $user = $_SESSION["logged_in_user"];
+                    if ($user == "admin") {
+                        ?>
+                        <div id="admin-drop" class="dropdown">
+                            <li><a id="adminDropdown">Admin-Tools</a></li>
+                            <div id="admin-drop-content" class="dropdown-content">
+                                <a href="admin-tools/password-generator.php">Passwort-Generator</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+
 
                 <script>
-                if (window.innerWidth <= 650) {
-                    var calcDrop = document.getElementById("drop");
-                    var calcDropdown = document.getElementById("calcDropdown");
-                    var calcDropdown_content = document.getElementById("drop-content");
+                    if (window.innerWidth <= 650) {
+                        var calcDrop = document.getElementById("drop");
+                        var calcDropdown = document.getElementById("calcDropdown");
+                        var calcDropdown_content = document.getElementById("drop-content");
 
-                    var admin_drop = document.getElementById("admin-drop");
-                    var adminDropdown = document.getElementById("adminDropdown");
-                    var admin_drop_content = document.getElementById("admin-drop-content");
+                        var admin_drop = document.getElementById("admin-drop");
+                        var adminDropdown = document.getElementById("adminDropdown");
+                        var admin_drop_content = document.getElementById("admin-drop-content");
 
 
-                    calcDropdown.addEventListener("click", function() {
-                        calcDrop.classList.add("dropdown-page");
-                        calcDropdown_content.classList.add("dropdown-content-page");
-                    });
+                        calcDropdown.addEventListener("click", function () {
+                            calcDrop.classList.add("dropdown-page");
+                            calcDropdown_content.classList.add("dropdown-content-page");
+                        });
 
-                    admin_drop.addEventListener("click", function() {
-                        adminDropdown.classList.add("dropdown-page");
-                        admin_drop_content.classList.add("dropdown-content-page");
-                    });
-                }
+                        admin_drop.addEventListener("click", function () {
+                            adminDropdown.classList.add("dropdown-page");
+                            admin_drop_content.classList.add("dropdown-content-page");
+                        });
+                    }
                 </script>
 
 
@@ -86,9 +96,9 @@
                 session_start();
                 if (isset($_SESSION["logged_in_user"])) {
                     ?>
-                <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
+                    <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
                 <?php } else { ?>
-                <a href="login/login.php" class="login-button">Login</a>
+                    <a href="login/login.php" class="login-button">Login</a>
                 <?php } ?>
             </ul>
         </nav>
