@@ -14,6 +14,7 @@
         $username = $_GET["user"];
         session_start();
         session_destroy();
+        require_once("includes/config.php");
 
         $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 
@@ -49,7 +50,7 @@
                             var calcDropdown = document.getElementById("calcDropdown");
                             var calcDropdown_content = document.getElementById("drop-content");
 
-                            calcDropdown.addEventListener("click", function () {
+                            calcDropdown.addEventListener("click", function() {
                                 caldDrop.classList.add("dropdown-page");
                                 calcDropdown_content.classList.add("dropdown-content-page");
                             });
@@ -61,7 +62,7 @@
                 <?php
                 session_start();
                 if (isset($_SESSION["logged_in_user"])) {
-                    ?>
+                ?>
                     <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
                 <?php } else { ?>
                     <a href="login/login.php" class="login-button">Login</a>
@@ -73,12 +74,45 @@
         <h1>Herzlich Willkommen <a style="text-decoration: underline;">
                 <?php if (isset($_SESSION["logged_in_name"])) {
                     echo $_SESSION["logged_in_name"];
-                } ?>
-            </a> bei Calculator for All</h1>
+                } ?></a> bei Calculator for All</h1>
         <h3>Hier kannst du alle Rechnungen automatisch ausrechnen, welche in der 3AFI derzeit unterrichtet werden.</h3>
         <p>Im Laufe der Zeit werden noch weitere Updates veröffentlicht!</p>
         <br><br>
     </div>
+    <?php
+    if (isset($_SESSION["logged_in_user"])) {
+        $user = $_SESSION["logged_in_user"];
+        if ($user == "admin") {
+
+    ?>
+
+            <div id="drop" class="dropdown">
+                <div id="adminDrop" class="admin-tools">
+                    <a><img src="img/settings_logo.png" width="50px" height="50px" alt="Settings"></a>
+                </div>
+                <a id="adminDropdown">Calculator</a>
+                <div id="admin-content" class="dropdown-content">
+                    <a href="mathe_overview.php">Test1</a>
+                    <a href="betp_overview.php">Test2</a>
+                    <a href="elektrotechnik_overview.php">Test3</a>
+                </div>
+                <script>
+                    if (window.innerWidth <= 650) {
+                        var adminDrop = document.getElementById("adminDrop");
+                        var adminDropdown = document.getElementById("adminDropdown");
+                        var admin_content = document.getElementById("admin-content");
+
+                        adminDropdown.addEventListener("click", function() {
+                            adminDrop.classList.add("dropdown-page");
+                            admin_content.classList.add("dropdown-content-page");
+                        });
+                    }
+                </script>
+            </div>
+    <?php
+        }
+    }
+    ?>
 </body>
 
 </html>

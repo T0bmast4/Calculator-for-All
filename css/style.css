@@ -185,6 +185,11 @@ nav .dropdown:hover .dropdown-content {
     display: block;
 }
 
+nav .dropdown a:hover .dropdown-content {
+    display: block;
+    margin-left: 40%;
+}
+
 nav .dropdown .clicked .dropdown-content {
     display: block;
 }
@@ -281,4 +286,23 @@ nav .dropdown-content-page .activeCalc {
     nav .dropdown-content-page, nav .dropdown-content-page .activeCalc {
         font-size: 17px;
     }
+}
+
+.admin-tools {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.admin-tools:hover{
+    background-color: #bbbbbb;
 }
