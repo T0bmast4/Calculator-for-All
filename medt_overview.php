@@ -27,7 +27,7 @@
             session_start();
             if (isset($_SESSION["logged_in_user"])) {
                 ?>
-                <a href="" class="logout-button">Logout</a>
+                <a href="index.php?user=<?php echo $_SESSION["logged_in_user"] ?>" class="logout-button">Logout</a>
             <?php } else { ?>
                 <a href="login/login.php" class="login-button">Login</a>
             <?php } ?>
