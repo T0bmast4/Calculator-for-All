@@ -1,7 +1,2 @@
-# .gitignore
-
-# Ignoriere die Konfigurationsdatei
 config.php
-
-# Ignoriere das gesamte includes-Verzeichnis
 /includes/
